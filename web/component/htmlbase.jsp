@@ -42,11 +42,11 @@
                     <form action="postinvitation" method="post" target="myIframe">
                         <div class="form-group">
                             <label for="types">类型</label>
-                            <input type="text" class="form-control" id="types" name="types" value="${htmltype}" readonly="readonly">
+                            <input type="text" class="form-control" id="types" name="types" value="${htmltype}" readonly="readonly" required="required">
                         </div>
                         <div class="form-group">
                             <label for="title">标题</label>
-                            <input type="text" class="form-control" id="title" name="title">
+                            <input type="text" class="form-control" id="title" name="title" required="required">
                         </div>
                         <div class="form-group">
                             <label for="content" >正文</label>

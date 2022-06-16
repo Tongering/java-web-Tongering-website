@@ -36,14 +36,10 @@
     <div class="col-sm-8">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h3>he</h3>
-                <hr>
-                <h3>heljfla</h3>
-                <hr>
                 <a class="btn btn-info" href="#" role="button">修改信息</a>
                 <img class="layui-upload-img" name="titleBase64Img"
                      id="base64Img" src="" style="display: none" width="300px" height="100px;">
-                <input type="file" id="image" lay-verify="required"
+                <input  type="file" id="image" lay-verify="required"
                        onchange="toBase64()" accept="image/jpeg,image/png,image/jpg"
                        class="layui-upload-button">
                 <br>

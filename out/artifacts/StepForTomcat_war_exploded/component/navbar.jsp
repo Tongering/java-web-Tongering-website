@@ -47,6 +47,15 @@
                     </ul>
 <%--                <li><a href="/plan">计划组 Plan</a></li>--%>
                 </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="true">工具 tool <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/calculator">计算器</a></li>
+                        <li><a href="/KOF(done)/templates/index.html">KOF</a></li>
+                    </ul>
+                    <%--                <li><a href="/plan">计划组 Plan</a></li>--%>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/Register.jsp" id="resg">注册</a></li>

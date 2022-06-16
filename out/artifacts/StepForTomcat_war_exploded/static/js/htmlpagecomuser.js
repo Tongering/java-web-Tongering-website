@@ -8,7 +8,7 @@ function commentuser(){
         //请求成功后的回调函数有两个参数
         success: function (data, textStatus) {
             if(data != 0){
-                $("#username").html(data);
+                $("#username").html(data.split("/")[0]);
                 $("#username").show();
                 $("#noneuser").hide();
             }

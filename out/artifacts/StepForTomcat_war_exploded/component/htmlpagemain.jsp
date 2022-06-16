@@ -19,8 +19,8 @@
         <div class="col-xs-10" >
             <div class="panel panel-default" >
                 <div class="panel-body" style="text-align: center;padding-bottom: 0px;"><h3 style="margin-top: 10px;margin-bottom: 0px;">${title}</h3></div>
-                <div style="display:inline;padding-left: 100px;"><img src="data:image/jpg;base64,${user_photo}" style="max-width: 50px;margin-top: -15px"/></div>
-                <div style="display:inline;margin-left:20px">${user}</div>
+                <div style="display:inline;padding-left: 100px;"><img class="borderpho" src="data:image/jpg;base64,${user_photo}" style="max-width: 50px;margin-top: -15px"/></div>
+                <div style="display:inline;margin-left:20px" >${user}</div>
                 <div style="display:inline;float: right;margin-right: 100px;margin-top: 10px;">
                     <div style="display:inline;" id="postid">
                         <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
@@ -70,7 +70,7 @@
                         <div>
                             <span class="glyphicon glyphicon-user" aria-hidden="true" id="noneuser"> 请登录</span>
                         </div>
-                        <img src="" style="max-width: 40px;display: none;" id="userphoto">
+                        <img class="borderpho" src="" style="max-width: 40px;display: none;" id="userphoto">
                         <div style="margin-left: -10px;margin-top:5px;display: none;" id="username"></div>
                         <div style="display: inline;">
                             <textarea class="form-control" rows="3" id="commentcontent" style="resize: vertical;min-height: 140px" name="content"></textarea>
@@ -85,8 +85,8 @@
                         <c:forEach items="${comments}" var="comment" varStatus="status">
                             <div on="commentdrawing()" style="background-color: rgba(0,0,0,0.1);margin-top: 10px;margin-bottom: 10px;border-radius: 10px;padding-bottom: 10px">
                                 <div style="margin-top: 5px;margin-left: 5px">
-                                    <img class="img-fluid" src="data:image/jpg;base64,${comment.photo}" style="max-width: 35px;max-height: 20px">
-                                    <a id="${comment.id}" style="margin-left: 5px">${comment.user}</a>
+                                    <img class="img-fluid borderpho" src="data:image/jpg;base64,${comment.photo}" style="max-width: 35px;max-height: 20px">
+                                    <a id="${comment.id}" style="margin-left: 5px" href="/space/${i.id}" target="_blank">${comment.user}</a>
                                 </div>
                                 <div style="margin-left: 50px;margin-top: 10px;margin-bottom: 10px">
                                         ${comment.comment}
