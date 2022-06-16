@@ -14,10 +14,11 @@ function searchposts(){
 }
 
 function turn(obj){
-    let id = obj.id;
-
-    let url = document.URL;
-    let newurl = url + '/content/' + id;
-
-     $(location).attr("href",newurl);
+    // let id = obj.id;
+    // let url = document.URL;
+    // let urlbase = url.split("/")[0];
+    // let posttype = $("#posttype").val();
+    // let newurl = urlbase + posttype + '/content/' + id;
+    //
+    //  $(location).attr("href",newurl);
 }

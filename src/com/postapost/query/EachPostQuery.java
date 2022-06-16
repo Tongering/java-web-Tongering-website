@@ -42,6 +42,7 @@ public class EachPostQuery {
                     EachPostInstantiation.setTitle(resultSet.getString(4));
                     EachPostInstantiation.setInvitationid(resultSet.getInt(5));
                     EachPostInstantiation.setPosttime(resultSet.getTimestamp(6));
+                    EachPostInstantiation.setTypeinvitation(resultSet.getString(7));
                     posts.add(EachPostInstantiation);
                 }
             }

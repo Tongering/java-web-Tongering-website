@@ -127,6 +127,7 @@
         <url-pattern>/python</url-pattern>
         <url-pattern>/java</url-pattern>
         <url-pattern>/project</url-pattern>
+        <url-pattern>/about</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -143,6 +144,7 @@
         <url-pattern>/python/content/*</url-pattern>
         <url-pattern>/java/content/*</url-pattern>
         <url-pattern>/project/content/*</url-pattern>
+        <url-pattern>/about/content/*</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -164,4 +166,15 @@
         <servlet-name>postcommentservlet</servlet-name>
         <url-pattern>/postcommentservlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>eachperson</servlet-name>
+        <servlet-class>com.myself.left.servlet.Eeachperson</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>eachperson</servlet-name>
+        <url-pattern>/space/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>

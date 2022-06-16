@@ -34,6 +34,8 @@
 
     <script src="/static/js/postcomment.js"></script>
     <script src="/static/js/htmlpagecomuser.js"></script>
+
+    <link rel="stylesheet" href="/static/css/photoborder.css">
 </head>
 <body>
 <%@include file="component/navbar.jsp"%>

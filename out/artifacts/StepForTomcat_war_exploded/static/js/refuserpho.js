@@ -15,11 +15,13 @@ function refuserpho() {
                 $("#quit").hide();
                 $("#pho").attr('href','/login.jsp');
             } else {
-                $("#pho").html(data);
+                let username = data.split("/")[0];
+                let userid = data.split("/")[1];
+                $("#pho").html(username);
                 $("#resg").hide();
                 $("#logi").hide();
                 $("#quit").show();
-                $("#pho").attr('href','/myself.jsp');
+                $("#pho").attr('href','/space/' + userid);
                 check = true;
             }
         }

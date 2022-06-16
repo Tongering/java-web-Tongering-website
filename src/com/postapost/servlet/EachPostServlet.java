@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class EachPostServlet extends HttpServlet {
@@ -30,7 +32,7 @@ public class EachPostServlet extends HttpServlet {
         req.setAttribute("htmltype",htmltype);
 
 
-        String sql = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime\n" +
+        String sqlappoint = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime, invitation.typeinvitation\n" +
                 "from invitation\n" +
                 "inner join id_photo\n" +
                 "on invitation.id = id_photo.id\n" +
@@ -38,8 +40,25 @@ public class EachPostServlet extends HttpServlet {
                 "on invitation.id = id_user_password.id\n" +
                 "where invitation.typeinvitation = ?\n" +
                 "order by invitation.posttime desc";
+
+        String sqlall = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime, invitation.typeinvitation\n" +
+                "from invitation\n" +
+                "inner join id_photo\n" +
+                "on invitation.id = id_photo.id\n" +
+                "inner join id_user_password\n" +
+                "on invitation.id = id_user_password.id\n" +
+                "order by invitation.posttime desc";
+
         EachPostQuery EachPostQuery = new EachPostQuery();
-        List posts = EachPostQuery.queryeachposts(sql,htmltype);
+        List posts;
+
+        if(htmltype.equals("about")){
+            posts = EachPostQuery.queryeachposts(sqlall);
+        }
+        else {
+            posts = EachPostQuery.queryeachposts(sqlappoint,htmltype);
+        }
+
 
         req.setAttribute("posts",posts);
 

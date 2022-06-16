@@ -10,14 +10,16 @@ public class EachPostInstantiation {
     private int invitationid;
     private Timestamp posttime;
     private int id;
+    private String typeinvitation;
 
-    public EachPostInstantiation(String user_photo, String user, String title, int invitationid, Timestamp posttime, int id) {
+    public EachPostInstantiation(String user_photo, String user, String title, int invitationid, Timestamp posttime, int id, String typeinvitation) {
         this.user_photo = user_photo;
         this.user = user;
         this.title = title;
         this.invitationid = invitationid;
         this.posttime = posttime;
         this.id = id;
+        this.typeinvitation = typeinvitation;
     }
 
     public EachPostInstantiation() {
@@ -71,15 +73,24 @@ public class EachPostInstantiation {
         this.id = id;
     }
 
+    public String getTypeinvitation() {
+        return typeinvitation;
+    }
+
+    public void setTypeinvitation(String typeinvitation) {
+        this.typeinvitation = typeinvitation;
+    }
+
     @Override
     public String toString() {
-        return "eachpost{" +
+        return "EachPostInstantiation{" +
                 "user_photo='" + user_photo + '\'' +
                 ", user='" + user + '\'' +
                 ", title='" + title + '\'' +
                 ", invitationid=" + invitationid +
                 ", posttime=" + posttime +
                 ", id=" + id +
+                ", typeinvitation='" + typeinvitation + '\'' +
                 '}';
     }
 }

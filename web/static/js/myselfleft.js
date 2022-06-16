@@ -1,5 +1,5 @@
 $().ready(function (){
-    myselfleft();
+    // myselfleft();
     refuserpho();
 })
 

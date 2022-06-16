@@ -31,9 +31,9 @@ public class LoginServlet extends HttpServlet {
         boolean codet = code.equalsIgnoreCase(req.getSession().getAttribute("code").toString());
 
         if((test!=-1)&&codet){
-            resp.sendRedirect("myself.jsp");
             req.getSession().setAttribute("id_user", test);
             req.getSession().setAttribute("name_user",username);
+            resp.sendRedirect("/space" + "/" + test);
         }
         else{
             PrintWriter pw=resp.getWriter();

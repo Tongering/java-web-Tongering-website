@@ -64,11 +64,12 @@
             <div class="col-xs-4" style="float: none;display: block;margin-left: auto;margin-right: auto">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <img class="img-fluid" src="data:image/jpg;base64,${i.user_photo}" style="max-width: 35px;max-height: 20px">
-                        <a id="${i.id}">${i.user}</a>
+                        <img class="img-fluid borderpho" src="data:image/jpg;base64,${i.user_photo}" style="max-width: 35px;max-height: 20px">
+                        <a id="${i.id}" href="/space/${i.id}" target="_blank">${i.user}</a>
+                        <a class="posttype" style="display: none;float: right;margin-right: 10px" href="/${i.typeinvitation}">${i.typeinvitation}</a>
                     </div>
                     <div class="panel-body" style="text-align: center;">
-                        <div id="${i.invitationid}"onclick="turn(this)" style="user-select:none;">${i.title}</div>
+                        <a id="${i.invitationid}"onclick="turn(this)" style="user-select:none;" href="/${i.typeinvitation}/content/${i.invitationid}">${i.title}</a>
                     </div>
                 </div>
             </div>

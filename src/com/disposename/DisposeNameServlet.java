@@ -27,7 +27,6 @@ public class DisposeNameServlet extends HttpServlet {
         PrintWriter out = resp.getWriter();
         Object id_user = req.getSession().getAttribute("id_user".toString());
 
-        System.out.println("id_user:" + id_user);
 
         if(id_user != null){
             String sql = "select user from id_user_password where id = ?";
@@ -36,7 +35,7 @@ public class DisposeNameServlet extends HttpServlet {
             UserProfileInstantiation getusername = userProfileQuery.queryutil(sql, id_user);
 
             String username = getusername.getUser();
-            out.print(username);
+            out.print(username + "/" + id_user);
         }
         else{
             out.print(0);

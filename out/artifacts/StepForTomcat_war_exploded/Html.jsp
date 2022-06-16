@@ -10,9 +10,11 @@
 <html>
 <head>
     <title>HTML</title>
+    <link rel="shortcut icon" href="/static/img/tongeringlogo.png">
     <link rel="stylesheet" href="/utils/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <script src="/utils/jquery-3.6.0.min.js"></script>
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/photoborder.css">
 </head>
 <body>
 <%@include file="component/navbar.jsp"%>

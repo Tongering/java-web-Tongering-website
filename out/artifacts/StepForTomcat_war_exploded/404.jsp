@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>404</title>
+
     <link rel="stylesheet" href="/utils/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <script src="/utils/jquery-3.6.0.min.js"></script>
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>

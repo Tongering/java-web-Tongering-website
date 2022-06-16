@@ -17,6 +17,7 @@
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <script src="/static/js/refuserpho.js"></script>
     <script src="/static/js/myselfleft.js"></script>
+    <link rel="stylesheet" href="/static/css/photoborder.css">
 </head>
 
 <body >
