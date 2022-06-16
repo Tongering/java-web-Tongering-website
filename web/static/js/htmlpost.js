@@ -1,0 +1,3 @@
+function showthepost(){
+    $("#postinvitation").show();
+}

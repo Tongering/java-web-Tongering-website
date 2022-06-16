@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Tongering">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tongering</output-path>
+    <root id="archive" name="Tongering.war">
+      <element id="artifact" artifact-name="StepForTomcat:war exploded" />
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+    </root>
+  </artifact>
+</component>
