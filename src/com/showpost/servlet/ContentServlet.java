@@ -19,7 +19,6 @@ public class ContentServlet extends HttpServlet {
 
         String invitationid = req.getParameter("invitationid");
 
-        System.out.println(invitationid);
 
         String sql = "select content\n" +
                 "from invitation\n" +

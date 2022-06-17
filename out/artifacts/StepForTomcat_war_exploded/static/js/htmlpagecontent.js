@@ -11,7 +11,7 @@ function getcontent(){
         },
         //请求成功后的回调函数有两个参数
         success: function (data, textStatus) {
-
+            $("#modifycontent").val(data);
             $("#appendTest").val(data);
             editormd.markdownToHTML("testEditorMdview", {
                 htmlDecode: "style,script,iframe", //可以过滤标签解码

@@ -4,4 +4,7 @@ $().ready(function () {
     commentdrawing();
     commentuser();
     commentphoto();
+    getlikes();
+    getfavorite();
+    modifypen();
 })

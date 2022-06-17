@@ -1,0 +1,35 @@
+.rock {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+    height: 174px;
+    background-image: url("/static/img/roky-none.png");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.rock:hover {
+    background-image: url("/static/img/roky-active.gif");
+    /*animation: rockMove steps(4) .4s infinite;*/
+}
+@keyframes rockMove {
+    /*0% {*/
+    /*    background-position-x: 0;*/
+    /*}*/
+    /*!* 25% {*/
+    /*    background-position-x: -150px;*/
+    /*}*/
+
+    /*50% {*/
+    /*    background-position-x: -300px;*/
+    /*}*/
+
+    /*75% {*/
+    /*    background-position-x: -450px;*/
+    /*} *!*/
+    /*100% {*/
+    /*    background-position-x: -600px;*/
+    /*}*/
+}

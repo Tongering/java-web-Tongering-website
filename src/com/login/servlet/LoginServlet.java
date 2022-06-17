@@ -32,7 +32,6 @@ public class LoginServlet extends HttpServlet {
 
         if((test!=-1)&&codet){
             req.getSession().setAttribute("id_user", test);
-            req.getSession().setAttribute("name_user",username);
             resp.sendRedirect("/space" + "/" + test);
         }
         else{

@@ -177,4 +177,84 @@
         <url-pattern>/space/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SharesServlet</servlet-name>
+        <servlet-class>com.shares.servlet.SharesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SharesServlet</servlet-name>
+        <url-pattern>/shareservlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Modifypost</servlet-name>
+        <servlet-class>com.postapost.servlet.Modifypost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Modifypost</servlet-name>
+        <url-pattern>/modifypost</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Delpost</servlet-name>
+        <servlet-class>com.postapost.servlet.Delpost</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Delpost</servlet-name>
+        <url-pattern>/delpost</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DelCommentServlet</servlet-name>
+        <servlet-class>com.postcoment.servlet.DelCommentServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>DelCommentServlet</servlet-name>
+        <url-pattern>/delcomment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModifyProfile</servlet-name>
+        <servlet-class>com.modifyprofile.servlet.ModifyProfile</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ModifyProfile</servlet-name>
+        <url-pattern>/modifyprofile</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ModifyPassword</servlet-name>
+        <servlet-class>com.modifyprofile.servlet.ModifyPassword</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ModifyPassword</servlet-name>
+        <url-pattern>/modifypassword</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Isme</servlet-name>
+        <servlet-class>com.myself.left.servlet.Isme</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Isme</servlet-name>
+        <url-pattern>/isme</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchUsername</servlet-name>
+        <servlet-class>com.myself.left.servlet.SearchUsername</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>SearchUsername</servlet-name>
+        <url-pattern>/searchusername</url-pattern>
+    </servlet-mapping>
+
 </web-app>

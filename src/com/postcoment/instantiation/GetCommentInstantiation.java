@@ -7,12 +7,14 @@ public class GetCommentInstantiation {
     private String photo;
     private String comment;
     private String user;
+    private int commentid;
 
-    public GetCommentInstantiation(int id, String photo, String comment, String user) {
+    public GetCommentInstantiation(int id, String photo, String comment, String user, int commentid) {
         this.id = id;
         this.photo = photo;
         this.comment = comment;
         this.user = user;
+        this.commentid = commentid;
     }
 
     public GetCommentInstantiation() {
@@ -50,6 +52,14 @@ public class GetCommentInstantiation {
         this.user = user;
     }
 
+    public int getCommentid() {
+        return commentid;
+    }
+
+    public void setCommentid(int commentid) {
+        this.commentid = commentid;
+    }
+
     @Override
     public String toString() {
         return "GetCommentInstantiation{" +
@@ -57,6 +67,7 @@ public class GetCommentInstantiation {
                 ", photo='" + photo + '\'' +
                 ", comment='" + comment + '\'' +
                 ", user='" + user + '\'' +
+                ", commentid=" + commentid +
                 '}';
     }
 }

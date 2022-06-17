@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.io.InputStream;
+import java.util.*;
 
 public class EachPostServlet extends HttpServlet {
 
@@ -62,8 +60,12 @@ public class EachPostServlet extends HttpServlet {
 
         req.setAttribute("posts",posts);
 
+        InputStream is = EachPostServlet.class.getClassLoader().getResourceAsStream("postrandom.properties");
+        Properties pros = new Properties();
+        pros.load(is);
+
         Random rand = new Random();
-        int min = 1, max = 2;
+        int min = Integer.parseInt(pros.getProperty("postmin")), max = Integer.parseInt(pros.getProperty("postmax"));
         int sayingid = rand.nextInt(max - min + 1) + min;
 
         String sqlrandsaying = "select saying\n" +

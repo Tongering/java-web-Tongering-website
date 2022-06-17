@@ -15,10 +15,15 @@
     <script src="/utils/jquery-3.6.0.min.js"></script>
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/static/css/photoborder.css">
+    <link rel="stylesheet" href="/static/css/roky.css">
+    <script src="/static/js/showtherocky.js"></script>
 </head>
 <body>
 <%@include file="component/navbar.jsp"%>
 <%@include file="component/htmlbase.jsp"%>
 <%@include file="component/bottom.jsp"%>
+<div class="rock fly" onclick="showrocky()">
+
+</div>
 </body>
 </html>

@@ -18,6 +18,8 @@
     <script src="/static/js/refuserpho.js"></script>
     <script src="/static/js/myselfleft.js"></script>
     <link rel="stylesheet" href="/static/css/photoborder.css">
+    <script src="/static/js/modifyprofile.js"></script>
+    <script src="/static/js/showbar.js"></script>
 </head>
 
 <body >

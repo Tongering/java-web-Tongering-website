@@ -41,6 +41,7 @@ public class PostInvitationServlet extends HttpServlet {
         }
         else{
             pw.write("<script language='javascript'>alert('请登录')</script>");
+            resp.sendRedirect("/login.jsp");
         }
 
     }

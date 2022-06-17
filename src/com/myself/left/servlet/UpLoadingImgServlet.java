@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class UpLoadingImgServlet extends HttpServlet {
 
@@ -21,5 +22,8 @@ public class UpLoadingImgServlet extends HttpServlet {
         String sql = "update id_photo set user_photo = ? where id = ?";
         updata updata = new updata();
         updata.updateutil(sql,imgbase,id);
+
+        PrintWriter pw=resp.getWriter();
+        pw.print(1);
     }
 }

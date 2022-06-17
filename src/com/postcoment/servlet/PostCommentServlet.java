@@ -34,8 +34,6 @@ public class PostCommentServlet extends HttpServlet {
         if(id!=null) {
             updata updata = new updata();
             updata.updateutil(sql, id, invitationid, content, commenttime);
-            System.out.println("okok");
-            System.out.println("id:" + id);
 //            resp.setIntHeader("Refresh", 0);
         }
         else{

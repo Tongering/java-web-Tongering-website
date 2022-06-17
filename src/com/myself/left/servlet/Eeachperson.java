@@ -1,5 +1,7 @@
 package com.myself.left.servlet;
 
+import com.login.instantiation.UserProfileInstantiation;
+import com.login.query.UserProfileQuery;
 import com.myself.left.instantiation.Usermyself;
 import com.myself.left.instantiation.Userphoto;
 import com.myself.left.query.QueryForMy;
@@ -39,6 +41,14 @@ public class Eeachperson extends HttpServlet {
                 break;
             }
 
+        String sqlname = "select user from id_user_password where id = ?";
+        UserProfileQuery userProfileQuery = new UserProfileQuery();
+        UserProfileInstantiation userProfileInstantiation = userProfileQuery.queryutil(sqlname,personid);
+
+        if(userProfileInstantiation.getUser()==null){
+            k=1;
+        }
+
         if(k==0) {
             String sqlphoto = "select user_photo from id_photo where id = ? ";
             QueryForPhoto queryforphoto = new QueryForPhoto();
@@ -50,7 +60,7 @@ public class Eeachperson extends HttpServlet {
             QueryForMy queryformy = new QueryForMy();
             Usermyself usermyself = queryformy.queryutilmyself(sqlprofile, personid);
 
-            Object username = req.getSession().getAttribute("name_user".toString());
+            String username = userProfileInstantiation.getUser();
             String university = usermyself.getUniversity();
             String subject = usermyself.getSubject();
             Date birth = usermyself.getBirth();
@@ -75,9 +85,33 @@ public class Eeachperson extends HttpServlet {
 
             EachPostQuery EachPostQuery = new EachPostQuery();
             List posts = EachPostQuery.queryeachposts(sqlpost,personid);
-            req.setAttribute("posts",posts);
+            req.setAttribute("posts",posts);//传递自己的帖子
 
+            String sqlfavoritepost = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime, invitation.typeinvitation\n" +
+                    "from invitation\n" +
+                    "inner join id_photo\n" +
+                    "on invitation.id = id_photo.id\n" +
+                    "inner join id_user_password\n" +
+                    "on invitation.id = id_user_password.id\n" +
+                    "inner join shares\n" +
+                    "on invitation.invitationid = shares.invitationid\n" +
+                    "where shares.id = ? and shares.favorite = ?";
 
+            List favoritepost = EachPostQuery.queryeachposts(sqlfavoritepost,personid,1);
+            req.setAttribute("favoritepost",favoritepost);//传递收藏的帖子
+
+            String sqlthumbpost = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime, invitation.typeinvitation\n" +
+                    "from invitation\n" +
+                    "inner join id_photo\n" +
+                    "on invitation.id = id_photo.id\n" +
+                    "inner join id_user_password\n" +
+                    "on invitation.id = id_user_password.id\n" +
+                    "inner join shares\n" +
+                    "on invitation.invitationid = shares.invitationid\n" +
+                    "where shares.id = ? and shares.likes = ?";
+
+            List thumbpost = EachPostQuery.queryeachposts(sqlthumbpost,personid,1);
+            req.setAttribute("thumbpost",thumbpost);//传递点赞的帖子
 
 
             req.getRequestDispatcher("/myself.jsp").forward(req,resp);

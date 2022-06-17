@@ -1,6 +1,9 @@
 package com.showpost.servlet;
 
+import com.jdbc.updata;
 import com.postcoment.query.CommentInvitationQuery;
+import com.shares.instantiation.IsExistInstantiation;
+import com.shares.query.IsExistQuery;
 import com.showpost.instantiation.SayingInstantiation;
 import com.showpost.query.QuerySaying;
 import com.showpost.query.QueryShowPostPage;
@@ -34,8 +37,6 @@ public class ExcuteURL extends HttpServlet {
         String servleturl = req.getServletPath();
         String htmltype = servleturl.split("/")[1];
 
-
-
         int k = 0;
 
         for(int i = contents.length(); --i>=0;)
@@ -44,8 +45,42 @@ public class ExcuteURL extends HttpServlet {
             k=1;
             break;
         }
+        String sqlserachpost = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime,invitation.likes,invitation.favorite,invitation.browse\n" +
+                "                from invitation\n" +
+                "                inner join id_photo\n" +
+                "                on invitation.id = id_photo.id\n" +
+                "                inner join id_user_password\n" +
+                "                on invitation.id = id_user_password.id\n" +
+                "where invitation.invitationid = ?";
+
+        QueryShowPostPage queryShowPostPage = new QueryShowPostPage();
+        ShowPostPageInstantiation showPostPageInstantiation = queryShowPostPage.queryshowpostpage(sqlserachpost,contents);
+        if(showPostPageInstantiation.getUser()==null){
+            resp.sendRedirect("/404.jsp");
+            k=1;
+        }
 
         if(k==0){
+
+            Object id = req.getSession().getAttribute("id_user".toString());
+            String sqlis = "select shareid, id, invitationid, likes, favorite, browse\n" +
+                    "from shares\n" +
+                    "where shares.id = ? and shares.invitationid = ?";
+            if(id!=null){
+                IsExistQuery isExistQuery = new IsExistQuery();
+                IsExistInstantiation isExistInstantiation = isExistQuery.queryshareexist(sqlis,id,contents);
+                updata updata = new updata();
+                String sqlupinvitation = "update invitation set browse = browse + 1 where invitationid = ?";
+                String sqlbrowse = "";
+                if(isExistInstantiation.getShareid()==0){//对应的用户和帖子没有记录  insert
+                    sqlbrowse = "insert into shares (id,invitationid,browse) values(?,?,1)";
+                }
+                else{
+                    sqlbrowse = "update shares set browse = browse + 1 where id = ? and invitationid = ?";
+                }
+                updata.updateutil(sqlbrowse,id,contents);
+                updata.updateutil(sqlupinvitation,contents);
+            }
 
             String sql = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime,invitation.likes,invitation.favorite,invitation.browse\n" +
                     "                from invitation\n" +
@@ -69,7 +104,7 @@ public class ExcuteURL extends HttpServlet {
             req.setAttribute("browse", ShowPostPageInstantiation.getBrowse());
 
 
-            String sqlcomments = "select id_user_password.user as user, id_photo.user_photo as photo, comments.content as comment, comments.id as id\n" +
+            String sqlcomments = "select id_user_password.user as user, id_photo.user_photo as photo, comments.content as comment, comments.id as id, comments.commentid as commentid\n" +
                     "from invitation\n" +
                     "\n" +
                     "inner join comments\n" +
@@ -87,14 +122,6 @@ public class ExcuteURL extends HttpServlet {
             CommentInvitationQuery commentInvitationQuery = new CommentInvitationQuery();
             List comments = commentInvitationQuery.queryeachcomment(sqlcomments,contents);
             req.setAttribute("comments",comments);
-
-
-
-
-
-
-
-
 
             req.getRequestDispatcher("/htmlpage.jsp").forward(req,resp);
         }

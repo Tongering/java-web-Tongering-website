@@ -34,6 +34,13 @@
 
     <script src="/static/js/postcomment.js"></script>
     <script src="/static/js/htmlpagecomuser.js"></script>
+    <script src="/static/js/postshare.js"></script>
+    <script src="/static/js/getshares.js"></script>
+    <script src="/static/js/modifypost.js"></script>
+
+    <link rel="stylesheet" href="/static/css/roky.css">
+    <script src="/static/js/showtherocky.js"></script>
+    <script src="/static/js/delcomment.js"></script>
 
     <link rel="stylesheet" href="/static/css/photoborder.css">
 </head>
@@ -41,5 +48,8 @@
 <%@include file="component/navbar.jsp"%>
 <%@include file="component/htmlpagemain.jsp"%>
 <%@include file="component/bottom.jsp"%>
+<div class="rock fly" onclick="showrocky()">
+
+</div>
 </body>
 </html>

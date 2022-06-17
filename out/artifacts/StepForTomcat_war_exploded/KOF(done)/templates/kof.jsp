@@ -17,6 +17,8 @@
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../static/css/base.css">
     <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/refuserpho.js"></script>
+    <script src="/static/js/kofready.js"></script>
 </head>
 <body>
 <%@include file="/component/navbar.jsp"%>

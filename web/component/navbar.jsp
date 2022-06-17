@@ -52,7 +52,7 @@
                        aria-expanded="true">工具 tool <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/calculator">计算器</a></li>
-                        <li><a href="/KOF(done)/templates/index.html">KOF</a></li>
+                        <li><a href="/KOF(done)/templates/kof.jsp">KOF</a></li>
                     </ul>
                     <%--                <li><a href="/plan">计划组 Plan</a></li>--%>
                 </li>

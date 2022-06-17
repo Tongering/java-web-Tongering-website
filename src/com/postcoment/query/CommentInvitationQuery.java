@@ -36,16 +36,11 @@ public class CommentInvitationQuery {
                 while(resultSet.next()){
                     GetCommentInstantiation getCommentInstantiation = new GetCommentInstantiation();
 
-                    System.out.println("****************");
-                    System.out.println(resultSet.getString(1));
-//                    System.out.println(resultSet.getString(2));
-                    System.out.println(resultSet.getString(3));
-                    System.out.println(resultSet.getString(4));
-
                     getCommentInstantiation.setUser(resultSet.getString(1));
                     getCommentInstantiation.setPhoto(resultSet.getString(2));
                     getCommentInstantiation.setComment(resultSet.getString(3));
                     getCommentInstantiation.setId(resultSet.getInt(4));
+                    getCommentInstantiation.setCommentid(resultSet.getInt(5));
 
                     posts.add(getCommentInstantiation);
                 }

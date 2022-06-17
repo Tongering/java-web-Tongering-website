@@ -1,6 +1,7 @@
 package com.register.servlet;
 
 import com.jdbc.updata;
+import com.postapost.servlet.EachPostServlet;
 import com.register.instantiation.GetId;
 import com.register.instantiation.Radompho;
 import com.register.query.QueryExamplePhoto;
@@ -11,9 +12,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.Random;
 
 public class RegisterServlet extends HttpServlet {
@@ -41,8 +44,12 @@ public class RegisterServlet extends HttpServlet {
                 "from examphoto\n" +
                 "where photoid = ?";
 
+        InputStream is = EachPostServlet.class.getClassLoader().getResourceAsStream("postrandom.properties");
+        Properties pros = new Properties();
+        pros.load(is);
+
         Random rand = new Random();
-        int min = 0, max = 7;
+        int min = Integer.parseInt(pros.getProperty("photomin")), max = Integer.parseInt(pros.getProperty("photomax"));
         int photoid = rand.nextInt(max - min + 1) + min;
 
         QueryExamplePhoto queryExamplePhoto = new QueryExamplePhoto();
@@ -65,29 +72,50 @@ public class RegisterServlet extends HttpServlet {
         String defaultbetter = "未填写特长";
         String defaultlikes = "未填写爱好";
 
+
+
         if(codet&&password.equals(repassword)){
-            updata updata = new updata();
-            updata.updateutil(sqlup, username, password);
 
-            QueryId queryId = new QueryId();
-            GetId getId = queryId.queryid(sqlid,username);
+            boolean isDigit = false;
+            boolean isLetter = false;
+            for(int i=0; i<password.length(); i++){
+                if(Character.isDigit(password.charAt(i))){
+                    isDigit = true;
+                }
+                else if(Character.isLetter(password.charAt(i))){
+                    isLetter = true;
+                }
+            }
+            String regex = "^[a-zA-Z0-9]{8,20}$";
+            boolean isRight = isDigit && isLetter && password.matches(regex);//判断新密码是否包含字母和数字，并为8~20位
 
-            int id = getId.getId();
+            if(isRight==true){
+                updata updata = new updata();
+                updata.updateutil(sqlup, username, password);
 
-            updata.updateutil(sqlinpho,id,examphoto);
-            updata.updateutil(sqlinself,id,defaultuniversity,defaultsubject,defaultbirth,defaultbetter,defaultlikes);
+                QueryId queryId = new QueryId();
+                GetId getId = queryId.queryid(sqlid,username);
+
+                int id = getId.getId();
+
+                updata.updateutil(sqlinpho,id,examphoto);
+                updata.updateutil(sqlinself,id,defaultuniversity,defaultsubject,defaultbirth,defaultbetter,defaultlikes);
 
 
-            resp.addHeader("refresh","0;URL=login.jsp");
+                resp.addHeader("refresh","0;URL=login.jsp");
 
-            pw.write("<script language='javascript'>alert('注册成功')</script>");
+                pw.write("<script language='javascript'>alert('注册成功')</script>");
+            }
+            else{
+                pw.write("<script language='javascript'>alert('密码应包含字母和数字且2~20位')</script>");
+            }
         }
         else if(!password.equals(repassword)){
-            resp.addHeader("refresh","0;URL=Register.jsp");
+//            resp.addHeader("refresh","0;URL=Register.jsp");
             pw.write("<script language='javascript'>alert('两次输入密码不一致')</script>");
         }
         else {
-            resp.addHeader("refresh","0;URL=Register.jsp");
+//            resp.addHeader("refresh","0;URL=Register.jsp");
             pw.write("<script language='javascript'>alert('验证码错误')</script>");
         }
     }

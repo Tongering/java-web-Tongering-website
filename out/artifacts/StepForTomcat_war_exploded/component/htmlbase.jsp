@@ -59,6 +59,9 @@
         </div>
         <div class="col-xs-2"></div>
     </div>
+    <div class="rock fly" onclick="showrocky()">
+
+    </div>
     <c:forEach items="${posts}" var="i" varStatus="status">
         <div class="row"style="">
             <div class="col-xs-4" style="float: none;display: block;margin-left: auto;margin-right: auto">
