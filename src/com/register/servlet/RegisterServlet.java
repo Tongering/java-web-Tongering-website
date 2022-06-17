@@ -49,7 +49,7 @@ public class RegisterServlet extends HttpServlet {
         pros.load(is);
 
         Random rand = new Random();
-        int min = Integer.parseInt(pros.getProperty("photomin")), max = Integer.parseInt(pros.getProperty("photomax"));
+        int min = Integer.parseInt(pros.getProperty("postmin")), max = Integer.parseInt(pros.getProperty("postmax"));
         int photoid = rand.nextInt(max - min + 1) + min;
 
         QueryExamplePhoto queryExamplePhoto = new QueryExamplePhoto();
