@@ -12,6 +12,7 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+<!-- 登录模块   -->
 
     <servlet>
         <servlet-name>CodeServlet</servlet-name>
@@ -22,6 +23,7 @@
         <servlet-name>CodeServlet</servlet-name>
         <url-pattern>/code</url-pattern>
     </servlet-mapping>
+<!--    验证码生成模块-->
 
     <servlet>
         <servlet-name>CheckCodeServlet</servlet-name>
@@ -32,6 +34,7 @@
         <servlet-name>CheckCodeServlet</servlet-name>
         <url-pattern>/checkCode</url-pattern>
     </servlet-mapping>
+<!--    验证码校验模块-->
 
     <servlet>
         <servlet-name>disposename</servlet-name>
@@ -42,6 +45,7 @@
         <servlet-name>disposename</servlet-name>
         <url-pattern>/disposename</url-pattern>
     </servlet-mapping>
+<!--通过id找用户名-->
 
     <servlet>
         <servlet-name>Checkname</servlet-name>
@@ -52,6 +56,7 @@
         <servlet-name>Checkname</servlet-name>
         <url-pattern>/Checkname</url-pattern>
     </servlet-mapping>
+<!--    获取名字检验是否存在数据库-->
 
     <servlet>
         <servlet-name>register</servlet-name>
@@ -62,6 +67,7 @@
         <servlet-name>register</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+<!--    注册模块-->
 
     <servlet>
         <servlet-name>Myselfleft</servlet-name>
@@ -72,6 +78,7 @@
         <servlet-name>Myselfleft</servlet-name>
         <url-pattern>/myselfleft</url-pattern>
     </servlet-mapping>
+<!--    个人主页左侧功能模块（TODO 可能撤去）-->
 
     <servlet>
         <servlet-name>exit</servlet-name>
@@ -82,6 +89,7 @@
         <servlet-name>exit</servlet-name>
         <url-pattern>/exit</url-pattern>
     </servlet-mapping>
+<!--    退出模块-->
 
     <servlet>
         <servlet-name>uploadimg</servlet-name>
@@ -92,6 +100,7 @@
         <servlet-name>uploadimg</servlet-name>
         <url-pattern>/uploadimg</url-pattern>
     </servlet-mapping>
+<!--    上传图片模块-->
 
     <servlet>
         <servlet-name>photo</servlet-name>
@@ -102,6 +111,7 @@
         <servlet-name>photo</servlet-name>
         <url-pattern>/photo</url-pattern>
     </servlet-mapping>
+<!--    请求图片模块-->
 
     <servlet>
         <servlet-name>postinvitation</servlet-name>
@@ -112,6 +122,7 @@
         <servlet-name>postinvitation</servlet-name>
         <url-pattern>/postinvitation</url-pattern>
     </servlet-mapping>
+<!--    发帖模块-->
 
     <servlet>
         <servlet-name>eachpostservlet</servlet-name>
@@ -129,6 +140,7 @@
         <url-pattern>/project</url-pattern>
         <url-pattern>/about</url-pattern>
     </servlet-mapping>
+<!--    查看所有帖子-->
 
     <servlet>
         <servlet-name>excuteurl</servlet-name>
@@ -146,6 +158,7 @@
         <url-pattern>/project/content/*</url-pattern>
         <url-pattern>/about/content/*</url-pattern>
     </servlet-mapping>
+<!--    查看帖子内容-->
 
     <servlet>
         <servlet-name>contentservlet</servlet-name>
@@ -156,6 +169,7 @@
         <servlet-name>contentservlet</servlet-name>
         <url-pattern>/contentservlet</url-pattern>
     </servlet-mapping>
+<!--    请求帖子正文内容-->
 
     <servlet>
         <servlet-name>postcommentservlet</servlet-name>
@@ -166,6 +180,7 @@
         <servlet-name>postcommentservlet</servlet-name>
         <url-pattern>/postcommentservlet</url-pattern>
     </servlet-mapping>
+<!--    发表评论-->
 
     <servlet>
         <servlet-name>eachperson</servlet-name>
@@ -176,6 +191,7 @@
         <servlet-name>eachperson</servlet-name>
         <url-pattern>/space/*</url-pattern>
     </servlet-mapping>
+<!--    个人空间-->
 
     <servlet>
         <servlet-name>SharesServlet</servlet-name>
@@ -186,6 +202,7 @@
         <servlet-name>SharesServlet</servlet-name>
         <url-pattern>/shareservlet</url-pattern>
     </servlet-mapping>
+<!--    发表分享模块-->
 
     <servlet>
         <servlet-name>Modifypost</servlet-name>
@@ -196,6 +213,7 @@
         <servlet-name>Modifypost</servlet-name>
         <url-pattern>/modifypost</url-pattern>
     </servlet-mapping>
+<!--    修改帖子模块-->
 
     <servlet>
         <servlet-name>Delpost</servlet-name>
@@ -206,6 +224,7 @@
         <servlet-name>Delpost</servlet-name>
         <url-pattern>/delpost</url-pattern>
     </servlet-mapping>
+<!--    删除帖子模块-->
     
     <servlet>
         <servlet-name>DelCommentServlet</servlet-name>
@@ -216,6 +235,7 @@
         <servlet-name>DelCommentServlet</servlet-name>
         <url-pattern>/delcomment</url-pattern>
     </servlet-mapping>
+<!--    删除评论模块-->
 
     <servlet>
         <servlet-name>ModifyProfile</servlet-name>
@@ -226,6 +246,7 @@
         <servlet-name>ModifyProfile</servlet-name>
         <url-pattern>/modifyprofile</url-pattern>
     </servlet-mapping>
+<!--    修改个人信息模块-->
     
     <servlet>
         <servlet-name>ModifyPassword</servlet-name>
@@ -236,6 +257,7 @@
         <servlet-name>ModifyPassword</servlet-name>
         <url-pattern>/modifypassword</url-pattern>
     </servlet-mapping>
+<!--    修改密码模块-->
 
     <servlet>
         <servlet-name>Isme</servlet-name>
@@ -246,6 +268,7 @@
         <servlet-name>Isme</servlet-name>
         <url-pattern>/isme</url-pattern>
     </servlet-mapping>
+<!--    判断是否为自己-->
     
     <servlet>
         <servlet-name>SearchUsername</servlet-name>
@@ -256,5 +279,6 @@
         <servlet-name>SearchUsername</servlet-name>
         <url-pattern>/searchusername</url-pattern>
     </servlet-mapping>
+<!--    搜索用户模块-->
 
 </web-app>

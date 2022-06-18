@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <img class="img-fluid" src="static/img/404notfound.jpg" style="max-height: 700px;">
+    <img class="img-fluid" src="/static/img/404notfound.jpg" style="max-height: 700px;">
 </div>
 
 </body>

@@ -3,6 +3,8 @@ package com.postcoment.servlet;
 import com.jdbc.updata;
 import com.postcoment.instantiation.OnlyCommentInstantiation;
 import com.postcoment.query.OnlyCommentQuery;
+import com.showpost.instantiation.ShowPostPageInstantiation;
+import com.showpost.query.QueryShowPostPage;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,15 +30,20 @@ public class DelCommentServlet extends HttpServlet {
         OnlyCommentQuery onlyCommentQuery = new OnlyCommentQuery();
         OnlyCommentInstantiation isuser = onlyCommentQuery.querycomment(sqlexistuser,commentid,id);//查看是否是自己发的评论
 
-        String sqlexistinv = "select id, invitationid, commentid, content, commenttime\n" +
-                "from comments\n" +
-                "where commentid = ? and invitationid = ?";
+        String sql = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime,invitation.likes,invitation.favorite,invitation.browse\n" +
+                "                from invitation\n" +
+                "                inner join id_photo\n" +
+                "                on invitation.id = id_photo.id\n" +
+                "                inner join id_user_password\n" +
+                "                on invitation.id = id_user_password.id\n" +
+                "where invitation.id = ? and invitation.invitationid = ?";
 
-        OnlyCommentInstantiation isinvitation = onlyCommentQuery.querycomment(sqlexistinv,commentid,invitationid);
+        QueryShowPostPage queryShowPostPage = new QueryShowPostPage();
+        ShowPostPageInstantiation showPostPageInstantiation = queryShowPostPage.queryshowpostpage(sql,id,invitationid);
 
         PrintWriter pw=resp.getWriter();
 
-        if(isuser.getContent()==null||isinvitation.getContent()==null){//不是自己或题主发的评论
+        if(isuser.getContent()==null&&showPostPageInstantiation.getUser()==null){//不是自己或题主发的评论
             pw.print(0);
         }
         else{
@@ -59,15 +66,20 @@ public class DelCommentServlet extends HttpServlet {
         OnlyCommentQuery onlyCommentQuery = new OnlyCommentQuery();
         OnlyCommentInstantiation isuser = onlyCommentQuery.querycomment(sqlexistuser,commentid,id);//查看是否是自己发的评论
 
-        String sqlexistinv = "select id, invitationid, commentid, content, commenttime\n" +
-                "from comments\n" +
-                "where commentid = ? and invitationid = ?";
+        String sql = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime,invitation.likes,invitation.favorite,invitation.browse\n" +
+                "                from invitation\n" +
+                "                inner join id_photo\n" +
+                "                on invitation.id = id_photo.id\n" +
+                "                inner join id_user_password\n" +
+                "                on invitation.id = id_user_password.id\n" +
+                "where invitation.id = ? and invitation.invitationid = ?";
 
-        OnlyCommentInstantiation isinvitation = onlyCommentQuery.querycomment(sqlexistinv,commentid,invitationid);
+        QueryShowPostPage queryShowPostPage = new QueryShowPostPage();
+        ShowPostPageInstantiation showPostPageInstantiation = queryShowPostPage.queryshowpostpage(sql,id,invitationid);
 
         PrintWriter pw=resp.getWriter();
 
-        if(isuser.getContent()==null||isinvitation.getContent()==null){//不是自己或题主发的评论
+        if(isuser.getContent()==null&&showPostPageInstantiation.getUser()==null){//不是自己或题主发的评论
             pw.print(0);
         }
         else {

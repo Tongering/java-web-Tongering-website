@@ -17,8 +17,8 @@
     <script src="static/js/404ready.js"></script>
 </head>
 <body>
-<%@include file="component/navbar.jsp"%>
-<%@include file="component/404main.jsp"%>
-<%@include file="component/bottom.jsp"%>
+<%@include file="/component/navbar.jsp"%>
+<%@include file="/component/404main.jsp"%>
+<%@include file="/component/bottom.jsp"%>
 </body>
 </html>

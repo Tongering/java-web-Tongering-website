@@ -19,9 +19,9 @@
     <script src="/static/js/showtherocky.js"></script>
 </head>
 <body>
-<%@include file="component/navbar.jsp"%>
-<%@include file="component/htmlbase.jsp"%>
-<%@include file="component/bottom.jsp"%>
+<%@include file="/component/navbar.jsp"%>
+<%@include file="/component/htmlbase.jsp"%>
+<%@include file="/component/bottom.jsp"%>
 <div class="rock fly" onclick="showrocky()">
 
 </div>

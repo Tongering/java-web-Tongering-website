@@ -1,8 +1,6 @@
 function delcomment(obj){
     let commentid = obj.id;
     let invitationid = $("#invitationid").html();
-    console.log(commentid);
-    console.log(invitationid);
     $.ajax({
         type: "post",//请求方式
         url: "/delcomment",//发送请求地址

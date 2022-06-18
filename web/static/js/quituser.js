@@ -9,5 +9,4 @@ function qq(){
         success: function (data, textStatus) {
         }
     });
-
 }

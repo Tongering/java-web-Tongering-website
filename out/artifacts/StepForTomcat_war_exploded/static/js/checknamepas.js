@@ -32,9 +32,6 @@ function checkrepassword() {
         $("#pas-c").attr("class", "text-danger");
         $("#sub").attr('disabled', true);
     }
-    
-    
-
 }
 
 function checkusername() {

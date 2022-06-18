@@ -36,11 +36,9 @@ public class ModifyProfile extends HttpServlet {
         PrintWriter pw=resp.getWriter();
 
         if(userProfileInstantiation==null){//没有此人
-            System.out.println("查无此人");
             pw.print(0);
         }
         else{
-            System.out.println("执行成功");
             updata updata = new updata();
             updata.updateutil(sqlupself,university,subject,better,likes,id);
             updata.updateutil(sqlupname,username,id);

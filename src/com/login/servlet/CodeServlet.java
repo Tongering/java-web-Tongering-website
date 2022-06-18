@@ -24,14 +24,14 @@ public class CodeServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.setProperty("java.awt.headless", "true");
+        System.setProperty("java.awt.headless", "true");//在linux下避免发生sun.awt.X11GraphicsEnvironment异常
         this.doPost(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        System.setProperty("java.awt.headless", "true");
+        System.setProperty("java.awt.headless", "true");//在linux下避免发生sun.awt.X11GraphicsEnvironment异常
         response.setContentType("image/JPEG");
         ServletOutputStream out = response.getOutputStream();
         // 定义图片的高度和宽度

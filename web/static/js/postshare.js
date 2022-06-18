@@ -1,7 +1,4 @@
 function likes(){
-    console.log("likes");
-    console.log($("#invitationid").html());
-    console.log($("#postlikes").css("color")=="rgb(208, 208, 208)");
     if($("#postlikes").css("color")=="rgb(208, 208, 208)"){//未点击
         $.ajax({
             type: "post",//请求方式
@@ -14,7 +11,6 @@ function likes(){
             },
             //请求成功后的回调函数有两个参数
             success: function (data, textStatus) {
-                console.log(data);
                 if(data!='0'){
                     $("#postlikes").css("color","rgb(0, 161, 214)");
                 }
@@ -48,8 +44,6 @@ function likes(){
 }
 
 function favorite(){
-    console.log("favorite");
-    console.log($("#postfavorite").css("color")=="rgb(208, 208, 208)");
     if($("#postfavorite").css("color")=="rgb(208, 208, 208)"){
         $.ajax({
             type: "post",//请求方式

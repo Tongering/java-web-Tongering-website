@@ -12,6 +12,7 @@
     <title>htmlbase</title>
     <script src="/static/js/htmlpost.js"></script>
     <script src="/static/js/searchposts.js"></script>
+<%--    TODO searchpost或许可以删掉--%>
     <script src="/static/js/refuserpho.js"></script>
     <script src="/static/js/htmlpostsready.js"></script>
 </head>
@@ -58,9 +59,6 @@
             </div>
         </div>
         <div class="col-xs-2"></div>
-    </div>
-    <div class="rock fly" onclick="showrocky()">
-
     </div>
     <c:forEach items="${posts}" var="i" varStatus="status">
         <div class="row"style="">

@@ -74,7 +74,7 @@ function toBase64(){
                     alert("上传成功");
                 }
                 else{
-                    alert("上传失败");
+                    alert("上传失败，请检查浏览器或者图片大小");
                 }
             }
         });

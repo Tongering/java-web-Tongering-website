@@ -44,7 +44,6 @@
                             <img class="code" alt="点击刷新" src="code" onclick="this.src='code?s='+new Date().getTime();">
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-2">
                             <button type="submit"  class="btn btn-success" id="sub">登入 Submit</button>

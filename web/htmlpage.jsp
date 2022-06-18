@@ -45,9 +45,9 @@
     <link rel="stylesheet" href="/static/css/photoborder.css">
 </head>
 <body>
-<%@include file="component/navbar.jsp"%>
-<%@include file="component/htmlpagemain.jsp"%>
-<%@include file="component/bottom.jsp"%>
+<%@include file="/component/navbar.jsp"%>
+<%@include file="/component/htmlpagemain.jsp"%>
+<%@include file="/component/bottom.jsp"%>
 <div class="rock fly" onclick="showrocky()">
 
 </div>

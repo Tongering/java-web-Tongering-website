@@ -25,9 +25,9 @@ public class EachPostServlet extends HttpServlet {
         resp.setContentType("text/html;charset=utf-8");
 
         String servleturl = req.getServletPath();
-        String htmltype = servleturl.split("/")[1];
+        String htmltype = servleturl.split("/")[1];//获取请求的页面类型
 
-        req.setAttribute("htmltype",htmltype);
+        req.setAttribute("htmltype",htmltype);//传送帖子类型
 
 
         String sqlappoint = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime, invitation.typeinvitation\n" +
@@ -37,7 +37,7 @@ public class EachPostServlet extends HttpServlet {
                 "inner join id_user_password\n" +
                 "on invitation.id = id_user_password.id\n" +
                 "where invitation.typeinvitation = ?\n" +
-                "order by invitation.posttime desc";
+                "order by invitation.posttime desc";//查询指定类型帖子
 
         String sqlall = "select id_photo.id as id, id_photo.user_photo, id_user_password.user, invitation.title, invitation.invitationid, invitation.posttime, invitation.typeinvitation\n" +
                 "from invitation\n" +
@@ -45,9 +45,9 @@ public class EachPostServlet extends HttpServlet {
                 "on invitation.id = id_photo.id\n" +
                 "inner join id_user_password\n" +
                 "on invitation.id = id_user_password.id\n" +
-                "order by invitation.posttime desc";
+                "order by invitation.posttime desc";//查询所有帖子
 
-        EachPostQuery EachPostQuery = new EachPostQuery();
+        EachPostQuery EachPostQuery = new EachPostQuery();//查询帖子操作
         List posts;
 
         if(htmltype.equals("about")){
@@ -58,7 +58,7 @@ public class EachPostServlet extends HttpServlet {
         }
 
 
-        req.setAttribute("posts",posts);
+        req.setAttribute("posts",posts);//传送查询帖子数据
 
         InputStream is = EachPostServlet.class.getClassLoader().getResourceAsStream("postrandom.properties");
         Properties pros = new Properties();
@@ -75,7 +75,7 @@ public class EachPostServlet extends HttpServlet {
         QuerySaying querySaying = new QuerySaying();
         SayingInstantiation sayingInstantiation = querySaying.querysaying(sqlrandsaying,sayingid);
 
-        req.setAttribute("wellsay",sayingInstantiation.getSaying());
+        req.setAttribute("wellsay",sayingInstantiation.getSaying());//传送名言
 
         req.getRequestDispatcher("Html.jsp").forward(req,resp);
     }

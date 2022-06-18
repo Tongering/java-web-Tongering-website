@@ -18,12 +18,19 @@ public class UpLoadingImgServlet extends HttpServlet {
 
         String imgbase = req.getParameter("imgbase64");
         Object id = req.getSession().getAttribute("id_user".toString());
-
-        String sql = "update id_photo set user_photo = ? where id = ?";
-        updata updata = new updata();
-        updata.updateutil(sql,imgbase,id);
-
         PrintWriter pw=resp.getWriter();
-        pw.print(1);
+
+        if(imgbase==null){
+            pw.print(0);
+        }
+        else{
+            String sql = "update id_photo set user_photo = ? where id = ?";
+            updata updata = new updata();
+            updata.updateutil(sql,imgbase,id);
+
+            pw.print(1);
+        }
+
+
     }
 }
