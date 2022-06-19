@@ -111,11 +111,11 @@ public class RegisterServlet extends HttpServlet {
             }
         }
         else if(!password.equals(repassword)){
-//            resp.addHeader("refresh","0;URL=Register.jsp");
+            resp.addHeader("refresh","0;URL=Register.jsp");
             pw.write("<script language='javascript'>alert('两次输入密码不一致')</script>");
         }
         else {
-//            resp.addHeader("refresh","0;URL=Register.jsp");
+            resp.addHeader("refresh","0;URL=Register.jsp");
             pw.write("<script language='javascript'>alert('验证码错误')</script>");
         }
     }

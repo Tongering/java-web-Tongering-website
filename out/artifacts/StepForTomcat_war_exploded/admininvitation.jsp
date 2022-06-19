@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>admininvitation</title>
+    <title>admininvitation -仝古计划</title>
+    <link rel="shortcut icon" href="/static/img/tongeringlogo.png">
     <link rel="stylesheet" href="/utils/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <script src="/utils/jquery-3.6.0.min.js"></script>
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
@@ -22,7 +23,7 @@
 <body>
 <%@include file="/component/adminnavbar.jsp"%>
 <%@include file="/component/admininvitationmain.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 <div class="rock fly" onclick="showrocky()">
 </body>
 </html>

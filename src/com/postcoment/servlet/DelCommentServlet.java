@@ -47,6 +47,9 @@ public class DelCommentServlet extends HttpServlet {
             pw.print(0);
         }
         else{
+            String sqldelcom = "delete from comments where commentid = ?";
+            updata updata = new updata();
+            updata.updateutil(sqldelcom,commentid);
             pw.print(1);
         }
     }

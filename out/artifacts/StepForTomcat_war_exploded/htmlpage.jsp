@@ -9,7 +9,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>htmlpage</title>
+    <title>帖子信息页 -仝古计划</title>
+    <link rel="shortcut icon" href="/static/img/tongeringlogo.png">
     <link rel="stylesheet" href="/utils/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <script src="/utils/jquery-3.6.0.min.js"></script>
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
@@ -49,7 +50,7 @@
 <body>
 <%@include file="/component/navbar.jsp"%>
 <%@include file="/component/htmlpagemain.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 <div class="rock fly" onclick="showrocky()">
 
 </div>

@@ -9,7 +9,7 @@
 
 <html>
 <head>
-    <title>HTML</title>
+    <title>帖子 -仝古计划</title>
     <link rel="shortcut icon" href="/static/img/tongeringlogo.png">
     <link rel="stylesheet" href="/utils/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <script src="/utils/jquery-3.6.0.min.js"></script>
@@ -22,7 +22,7 @@
 <body>
 <%@include file="/component/navbar.jsp"%>
 <%@include file="/component/htmlbase.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 <div class="rock fly" onclick="showrocky()">
 
 </div>

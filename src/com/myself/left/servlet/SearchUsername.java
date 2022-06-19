@@ -28,7 +28,7 @@ public class SearchUsername extends HttpServlet {
 
         PrintWriter out = resp.getWriter();
 
-        if(getId==null){
+        if(getId.getId()==0){
             out.print(0);
         }
         else{

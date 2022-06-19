@@ -1,36 +1,37 @@
 function modifyusernamecheck(){
-    $.ajax({
-        type: "post",//请求方式
-        url: "/Checkname",//发送请求地址
-        async: false,
-        dataType: "html",
-        data: {
-            username:$("#username").val()
-        },
-        //请求成功后的回调函数有两个参数
-        success: function (data, textStatus) {
-            if (data == '0') {
-                $("#worryusername").attr("class", "text-danger");
-                $("#worryusername").html(" 不可用");
-                $("#sub").attr('disabled', true);
-            } else {
-                if($("#username").val().toString().length>=3&&$("#username").val().toString().length<=10){
-                    $("#worryusername").attr("class", "text-succes");
-                    $("#worryusername").html(" 可用");
-                    $("#sub").attr('disabled', false);
-                }
-                else {
+    let username = $("[name='username']").val();
+    if(username!=""){
+        $.ajax({
+            type: "post",//请求方式
+            url: "/Checkname",//发送请求地址
+            async: false,
+            dataType: "html",
+            data: {
+                username:$("#username").val()
+            },
+            //请求成功后的回调函数有两个参数
+            success: function (data, textStatus) {
+                if (data == '0') {
                     $("#worryusername").attr("class", "text-danger");
-                    $("#worryusername").html(" 用户名（3~10）");
+                    $("#worryusername").html(" 不可用");
                     $("#sub").attr('disabled', true);
+                } else {
+                    if($("#username").val().toString().length>=3&&$("#username").val().toString().length<=10){
+                        $("#worryusername").attr("class", "text-succes");
+                        $("#worryusername").html(" 可用");
+                        $("#sub").attr('disabled', false);
+                    }
+                    else {
+                        $("#worryusername").attr("class", "text-danger");
+                        $("#worryusername").html(" 用户名（3~10）");
+                        $("#sub").attr('disabled', true);
+                    }
+                    check = true;
                 }
 
-                check = true;
             }
-
-        }
-    });
-    console.log($("[name='university']").attr('placeholder'));
+        });
+    }
 }
 
 function postmodifyprofile(){

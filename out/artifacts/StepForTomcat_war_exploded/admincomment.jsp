@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>adminuser</title>
+    <title>adminuser -仝古计划</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理员界面</title>
+    <link rel="shortcut icon" href="/static/img/tongeringlogo.png">
     <link rel="stylesheet" href="/utils/bootstrap-3.4.1-dist/css/bootstrap.min.css">
     <script src="/utils/jquery-3.6.0.min.js"></script>
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
@@ -25,7 +25,7 @@
 <body>
 <%@include file="/component/adminnavbar.jsp"%>
 <%@include file="/component/admincommentmain.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 <div class="rock fly" onclick="showrocky()">
 </body>
 </html>
