@@ -22,12 +22,13 @@
     <script src="/static/js/showbar.js"></script>
     <link rel="stylesheet" href="/static/css/roky.css">
     <script src="/static/js/showtherocky.js"></script>
+    <link rel="stylesheet" href="/static/css/setbackground.css">
 </head>
 
 <body >
 <%@include file="/component/navbar.jsp"%>
 <%@include file="/component/myselfmain.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 <div class="rock fly" onclick="showrocky()">
 </body>
 </html>

@@ -39,11 +39,15 @@
                         <li><a href="/css">Css</a></li>
                         <li><a href="/js">Js</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/c">C</a></li>
-                        <li><a href="/python">Python</a></li>
+                        <li><a href="/servlet">Servlet</a></li>
+                        <li><a href="/cookies">Cookies</a></li>
                         <li><a href="/java">Java</a></li>
+                        <li><a href="/jdbc">Jdbc</a></li>
+                        <li><a href="/jstl">Jstl</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/project">Project</a></li>
+                        <li><a href="/vue">Vue</a></li>
+                        <li><a href="/react">react</a></li>
+                        <li><a href="/ajax">ajax</a></li>
                     </ul>
 <%--                <li><a href="/plan">计划组 Plan</a></li>--%>
                 </li>

@@ -1,5 +1,7 @@
 package com.login.servlet;
 
+import com.admin.instantiation.AdminUserInstantiation;
+import com.admin.query.AdminUserQuery;
 import com.login.query.UserProfileQuery;
 import com.login.instantiation.UserProfileInstantiation;
 
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 public class LoginServlet extends HttpServlet {
 
@@ -30,9 +33,22 @@ public class LoginServlet extends HttpServlet {
 
         boolean codet = code.equalsIgnoreCase(req.getSession().getAttribute("code").toString());
 
+        String sqladmin = "select id\n" +
+                "from adminuser\n" +
+                "where id = ?";
+
+        AdminUserQuery adminUserQuery = new AdminUserQuery();
+
         if((test!=-1)&&codet){
             req.getSession().setAttribute("id_user", test);
-            resp.sendRedirect("/space" + "/" + test);
+            AdminUserInstantiation adminUserInstantiation = adminUserQuery.queryadminid(sqladmin,test);
+
+            if(adminUserInstantiation.getId()!=0){
+                resp.sendRedirect("/adminuser");
+            }
+            else{
+                resp.sendRedirect("/space" + "/" + test);
+            }
         }
         else{
             PrintWriter pw=resp.getWriter();

@@ -19,11 +19,12 @@
     <script src="/static/js/refuserpho.js"></script>
     <script src="/static/js/checknamepas.js"></script>
     <script src="static/js/registerready.js"></script>
+    <link rel="stylesheet" href="/static/css/setbackground.css">
 </head>
 
 <body>
 <%@include file="/component/navbar.jsp"%>
 <%@include file="/component/registermain.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 </body>
 </html>

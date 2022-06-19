@@ -22,6 +22,7 @@
     <script src="/static/js/showbar.js"></script>
     <link rel="stylesheet" href="/static/css/roky.css">
     <script src="/static/js/showtherocky.js"></script>
+    <link rel="stylesheet" href="/static/css/setbackground.css">
 </head>
 
 <body >

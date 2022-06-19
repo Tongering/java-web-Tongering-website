@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="/static/css/photoborder.css">
     <link rel="stylesheet" href="/static/css/roky.css">
     <script src="/static/js/showtherocky.js"></script>
+    <link rel="stylesheet" href="/static/css/setbackground.css">
 </head>
 <body>
 <%@include file="/component/navbar.jsp"%>
 <%@include file="/component/htmlbase.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 <div class="rock fly" onclick="showrocky()">
 
 </div>

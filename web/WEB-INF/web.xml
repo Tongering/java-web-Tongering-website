@@ -134,10 +134,14 @@
         <url-pattern>/html</url-pattern>
         <url-pattern>/css</url-pattern>
         <url-pattern>/js</url-pattern>
-        <url-pattern>/c</url-pattern>
-        <url-pattern>/python</url-pattern>
+        <url-pattern>/servlet</url-pattern>
+        <url-pattern>/cookies</url-pattern>
         <url-pattern>/java</url-pattern>
-        <url-pattern>/project</url-pattern>
+        <url-pattern>/jdbc</url-pattern>
+        <url-pattern>/jstl</url-pattern>
+        <url-pattern>/vue</url-pattern>
+        <url-pattern>/react</url-pattern>
+        <url-pattern>/ajax</url-pattern>
         <url-pattern>/about</url-pattern>
     </servlet-mapping>
 <!--    查看所有帖子-->
@@ -152,10 +156,14 @@
         <url-pattern>/html/content/*</url-pattern>
         <url-pattern>/css/content/*</url-pattern>
         <url-pattern>/js/content/*</url-pattern>
-        <url-pattern>/c/content/*</url-pattern>
-        <url-pattern>/python/content/*</url-pattern>
+        <url-pattern>/servlet/content/*</url-pattern>
+        <url-pattern>/cookies/content/*</url-pattern>
         <url-pattern>/java/content/*</url-pattern>
-        <url-pattern>/project/content/*</url-pattern>
+        <url-pattern>/jdbc/content/*</url-pattern>
+        <url-pattern>/jstl/content/*</url-pattern>
+        <url-pattern>/vue/content/*</url-pattern>
+        <url-pattern>/react/content/*</url-pattern>
+        <url-pattern>/ajax/content/*</url-pattern>
         <url-pattern>/about/content/*</url-pattern>
     </servlet-mapping>
 <!--    查看帖子内容-->
@@ -280,5 +288,95 @@
         <url-pattern>/searchusername</url-pattern>
     </servlet-mapping>
 <!--    搜索用户模块-->
+    
+    <servlet>
+        <servlet-name>DisposeCommentServlet</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDisposeCommentServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>DisposeCommentServlet</servlet-name>
+        <url-pattern>/admincomment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminDelcomment</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDelcomment</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminDelcomment</servlet-name>
+        <url-pattern>/admindelcomment</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminDisposeUserServlet</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDisposeUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminDisposeUserServlet</servlet-name>
+        <url-pattern>/adminuser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminDelUser</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDelUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminDelUser</servlet-name>
+        <url-pattern>/admindeluser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AdminDisposeInvitationServlet</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDisposeInvitationServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AdminDisposeInvitationServlet</servlet-name>
+        <url-pattern>/admininvitation</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminDelInvitation</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDelInvitation</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminDelInvitation</servlet-name>
+        <url-pattern>/admindelinvitation</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AdminDisposeAdminServlet</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDisposeAdminServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AdminDisposeAdminServlet</servlet-name>
+        <url-pattern>/adminserver</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminAddServlet</servlet-name>
+        <servlet-class>com.admin.servlet.AdminAddServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminAddServlet</servlet-name>
+        <url-pattern>/adminadd</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminDelServlet</servlet-name>
+        <servlet-class>com.admin.servlet.AdminDelServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AdminDelServlet</servlet-name>
+        <url-pattern>/admindel</url-pattern>
+    </servlet-mapping>
 
 </web-app>

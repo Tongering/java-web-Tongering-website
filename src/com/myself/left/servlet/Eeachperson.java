@@ -46,6 +46,7 @@ public class Eeachperson extends HttpServlet {
         UserProfileInstantiation userProfileInstantiation = userProfileQuery.queryutil(sqlname,personid);
 
         if(userProfileInstantiation.getUser()==null){
+            resp.sendRedirect("/404.jsp");
             k=1;
         }
 

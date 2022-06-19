@@ -43,6 +43,8 @@
     <script src="/static/js/delcomment.js"></script>
 
     <link rel="stylesheet" href="/static/css/photoborder.css">
+
+    <link rel="stylesheet" href="/static/css/setbackground.css">
 </head>
 <body>
 <%@include file="/component/navbar.jsp"%>

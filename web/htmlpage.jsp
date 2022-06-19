@@ -43,11 +43,13 @@
     <script src="/static/js/delcomment.js"></script>
 
     <link rel="stylesheet" href="/static/css/photoborder.css">
+
+    <link rel="stylesheet" href="/static/css/setbackground.css">
 </head>
 <body>
 <%@include file="/component/navbar.jsp"%>
 <%@include file="/component/htmlpagemain.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 <div class="rock fly" onclick="showrocky()">
 
 </div>

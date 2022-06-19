@@ -15,10 +15,11 @@
     <script src="/utils/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
     <script src="static/js/refuserpho.js"></script>
     <script src="static/js/404ready.js"></script>
+    <link rel="stylesheet" href="/static/css/setbackground.css">
 </head>
 <body>
 <%@include file="/component/navbar.jsp"%>
 <%@include file="/component/404main.jsp"%>
-<%@include file="/component/bottom.jsp"%>
+<%--<%@include file="/component/bottom.jsp"%>--%>
 </body>
 </html>
